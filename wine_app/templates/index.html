@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Wine Connoisseur</h1>
+</h1>
+  <p>Welcome to Wine Connoisseur App, a django Web-app developed by <em>Saumya Patel</em>!</p>
+
+  <h2></h2>
+  <p>Following features are implemented as per the requirement</p>
+  <ul class="list-styled">
+    <li>Imported csv in django model db.</li>
+    <li>Implemented frontend using bootstrap and a backend in the python3.6 django2.0</li>
+    <li>Exposed RestAPIs from the backend with wine details as json response.</li>
+    <li>Responsive design listing all the wine details.</li>
+    <li><strong>[Plus Point] </strong></li>
+    <ul>
+      <li>Implemented feature to filter wines based on :
+        <ul>
+          <li> different country, province, regions.</li>
+          <li>Support grape variety filter search</li>
+        </ul>
+      <li>Implemented the feature to sort the wines based on the price, points, country etc.</li>
+      </li>
+    </ul>
+    <li><strong>[Advanced Point] </strong></li>
+    <ul>
+      <li>Implemented the signup and login/logout functionality and auth based views.
+      </li>
+    </ul>
+  </ul>
+{% endblock %}

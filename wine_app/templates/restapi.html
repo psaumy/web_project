@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Rest API</h1>
+
+  <h2></h2>
+  <p>Get request on the url to fetch wine details in json format</p>
+  <ul class="list-styled">
+    <li>
+      <p>{Base URL}/api/wine/{id of wine}</p>
+      <a href="{% url 'wine-api' 1 %}"> Example </a>
+    </li>
+  </ul>
+{% endblock %}

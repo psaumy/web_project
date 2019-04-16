@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}<title>Wine Connoisseur</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> <!-- Add additional CSS in static file -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'css/my_styles.css' %}">
+</head>
+<body>
+
+
+
+
+<div class="container-fluid">
+
+  <!-- Second navbar for sign in -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'index' %}">Wine App</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse-2">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="{% url 'index' %}">Home</a>
+          </li>
+
+          <li>
+            <a href="{% url 'portfolio' %}">My Portfolio</a>
+          </li>
+
+          <li>
+            <a href="{% url 'wines' %}">Explore Wines</a>
+          </li>
+
+          <li>
+            <a href="{% url 'restapi' %}">Rest API</a>
+          </li>
+            {% if user.is_authenticated %}
+              <li>
+                <a class="btn btn-default btn-outline btn-circle collapsed" href="{%  url 'logout' %}" >Log out</a>
+              </li>
+            {% else %}
+              <li>
+                <a class="btn btn-default btn-outline btn-circle collapsed"  href="{%  url 'login' %}" >Sign in</a>
+              </li>
+              <li>
+                <a class="btn btn-default btn-outline btn-circle collapsed"  href="{%  url 'signup' %}" >Sign Up</a>
+              </li>
+            {% endif %}
+        </ul>
+      </div><!-- /.container -->
+  </nav><!-- /.navbar -->
+
+
+</div><!-- /.container-fluid -->
+
+<div class="[ container ]">
+  <div class="[ row ]">
+    <div class="[ col-xs-12 col-md-offset-1 col-md-10 ]">
+        {% block content %}{% endblock %}
+
+
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+      <div class="container">
+        <p class="text-muted pull-left">© Copyright 2018 Saumya Patel</p>
+      </div>
+    </div>
+</body>
+</html>

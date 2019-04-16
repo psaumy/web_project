@@ -1,0 +1,47 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    {% load static %}
+
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12 lead">Wine : {{ wine.winery }}<hr></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;
+              display:block; margin:auto;" src="{% static 'img/wine.png' %}">
+              </div>
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h1 class="only-bottom-margin"> {{ wine.variety }} {{ wine.designation }}</h1>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <span class="text-muted">Description:</span> {{ wine.description }} <br><br>
+                    <span class="text-muted">Region:</span> {{ wine.region_1 }} {{ wine.region_2 }} {{ wine.province }} <br>
+                    <span class="text-muted">Country:</span> {{ wine.country }}<br>
+                    <span class="text-muted">Variety:</span> {{ wine.variety }}<br>
+                    <small class="text-muted">Price: {{ wine.display_price }} </small><br>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="activity-mini">
+                      <i class="glyphicon glyphicon-thumbs-up text-muted"></i> {{ wine.points }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

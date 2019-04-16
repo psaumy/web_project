@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <div class="card hovercard">
+        <div class="cardheader">
+
+        </div>
+        <div class="avatar">
+            {% load static %}
+            <img alt="" src="{% static 'img/profile.jpg' %}">
+        </div>
+        <div class="info">
+            <div class="title">
+                <a target="_blank" href="#">Saumya Patel</a>
+            </div>
+            <div class="desc">Software Developer</div>
+            <div class="desc">Tech Enthusiast</div>
+            <div class="desc">And though she be but little, she is fierce</div>
+        </div>
+        <div class="bottom">
+            <div class="row social">
+            <ul class="social-icons list-inline">
+	      <li><a href="https://www.facebook.com/superbsam" target="_blank"><img src="{% static 'img/fb.png' %}" alt="Facebook"></a></li>
+              <li><a href="https://www.linkedin.com/in/saumya-patel/" target="_blank"><img src="{% static 'img/Linkedin.png' %}" alt="Linkedin"></a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+{% endblock %}
